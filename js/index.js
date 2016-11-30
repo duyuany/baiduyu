@@ -41,4 +41,30 @@ $(function(){
     $("#fullpage")[0].addEventListener("mozTransitionEnd",function(){
         flag=true;
     })
+
+    var flag2=true;
+    $(".menu-option").click(function(){
+        if(flag2){
+            $(this).find(".menu-option-tline").css({transform: "rotateZ(45deg) translateY(10px)"})
+            $(this).find(".menu-option-bline").css({transform: "rotateZ(-45deg) translateY(-10px)"})
+            $(".menu a").each(function(index,obj){
+                //alert(index)
+
+                $(obj).css({
+                    opacity:0,
+                    animation: "menu 2s ease "+index*0.2+"s forwards"})
+            })
+            flag2=false;
+        }else{
+            $(this).find(".menu-option-tline").css({transform: "rotateZ(0deg) translateY(0px)"})
+            $(this).find(".menu-option-bline").css({transform: "rotateZ(0deg) translateY(0px)"})
+            $(".menu a").each(function(index,obj){
+                //alert(index)
+                $(obj).css({
+                    opacity:1,
+                    animation: "menu1 2s ease "+(1.2-index*0.2)+"s forwards"})
+            })
+            flag2=true;
+        }
+    })
 })
