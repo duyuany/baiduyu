@@ -38,10 +38,10 @@ $(function(){
     $("#fullpage")[0].addEventListener("webkitTransitionEnd",function(){
         flag=true;
         $("section").each(function(index,obj){
-            if(num==0){
+            if(index==0){
                 return;
             }
-            //if(num!=0){
+            if(num!==0){
                 if(index==num){
                     $(".aa").eq(index).css({
                         transform: "translateX(0px)",opacity: 1
@@ -58,7 +58,7 @@ $(function(){
                         transform: "translateX(50px)",opacity: 0
                     })
                 }
-            //}
+            }
 
 
         })
