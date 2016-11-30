@@ -2,6 +2,11 @@
  * Created by Administrator on 2016/11/29 0029.
  */
 $(function(){
+    $("#fullpage").mousedown(function(e){
+        e.preventDefault();
+    }).mousemove(function(e){
+        e.preventDefault();
+    });
     var ch=$(window).height();
     var num=0;
     var flag=true;
